@@ -212,7 +212,12 @@
         <French>Recruter un Mortier</French>
         <Russian>Миномётчик</Russian>
       </Key>
-      <Key ID="STR_antistasi_dialogs_garrison_spawn_grenadier_text">
+      <Key ID="STR_antistasi_dialogs_garrison_spawn_aa_specialist_text">
+        <Original>Recruit AA Specialist</Original>
+        <English>Recruit AA Specialistr</English>
+        <Russian>ПЗРК</Russian>
+      </Key>
+	  <Key ID="STR_antistasi_dialogs_garrison_spawn_grenadier_text">
         <Original>Recruit Grenadier</Original>
         <English>Recruit Grenadier</English>
         <French>Recruter un Grenadier</French>

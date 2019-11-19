@@ -8,9 +8,9 @@ if !(skillMult == 2) then
 	if (skillMult == 1) then
 		{
 		server setVariable ["hr",25,true];
-		server setVariable ["resourcesFIA",5000,true];
+		server setVariable ["resourcesFIA",10000,true];
 		vehInGarage = [vehSDKTruck,vehSDKTruck,SDKMortar,SDKMGStatic,staticAAteamPlayer];
-		minWeaps = 15;
+		minWeaps = 5;
 		if !(hasTFAR) then
 			{
 			"ItemRadio" call A3A_fnc_unlockEquipment;
@@ -22,7 +22,7 @@ if !(skillMult == 2) then
 		//Hard Difficulty Tweaks
 		server setVariable ["hr",0,true];
 		server setVariable ["resourcesFIA",200,true];
-		minWeaps = 40;
+		minWeaps = 25;
 		};
 	[] call A3A_fnc_statistics;
 	};

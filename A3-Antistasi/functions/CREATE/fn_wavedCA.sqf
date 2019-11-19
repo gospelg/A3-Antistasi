@@ -8,7 +8,7 @@ _firstWave = true;
 _mrkDestination = _this select 0;
 //_mrkOrigin can be an Airport or Carrier
 _mrkOrigin = _this select 1;
-_waves = _this select 2;
+_waves = 1;
 if (_waves <= 0) then {_waves = -1};
 _size = [_mrkDestination] call A3A_fnc_sizeMarker;
 _tsk = "";

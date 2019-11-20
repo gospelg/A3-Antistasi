@@ -75,15 +75,20 @@ switch (true) do {
 			diag_log format ["%1: [Antistasi] | DEBUG | FIAinitBASES.sqf | _unit:%2 is SDKMG.",servertime,_unit];
 		};
 	};
-	case (_typeX in SDKGL): {
-		if (count unlockedGrenadeLaunchers > 0) then {
-			[_unit,unlockedGrenadeLaunchers] call A3A_fnc_randomRifle;
-		} else {
-			[_unit,unlockedRifles] call A3A_fnc_randomRifle;
-		};
-		if (debug) then {
-			diag_log format ["%1: [Antistasi] | DEBUG | FIAinitBASES.sqf | _unit:%2 is SDKGL.",servertime,_unit];
-		};
+	//This should mirror fia init function
+	case (_typeX in SDKAA): {
+		hint "init aa guy"
+		if (haveRHS) then {
+		    private _aa = "igla_classname"
+		    }
+		else {
+		    private _aa = "launch_Titan_F"
+		    };
+		[_unit,unlockedRifles] call A3A_fnc_randomRifle;
+		removeBackpack _unit;
+		_unit addBackpack "B_AssaultPack_blk";
+		_unit removeWeaponGlobal (secondaryWeapon _unit);
+	        [_unit, _aa, 4, 0] call BIS_fnc_addWeapon;
 	};
 	case (_typeX in SDKMedic): {
 		[_unit,unlockedSMGs] call A3A_fnc_randomRifle;

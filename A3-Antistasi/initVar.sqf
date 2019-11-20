@@ -682,6 +682,11 @@ otherUpdateTiers = [3, 7];
 otherStaticsTiers = [0.3, 1];
 [] call A3A_fnc_initPreference;
 
+//define some singleplater parameters
+unlockedUnlimitedAmmo = 1;
+allowGuidedLaunchers = 1;
+allowUnlockedExplosives = 1;
+
 ////////////////////////////////////
 // DECLARE VARIBALES FOR CLIENTS ///
 ////////////////////////////////////

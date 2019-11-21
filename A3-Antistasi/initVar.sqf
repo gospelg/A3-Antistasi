@@ -105,6 +105,9 @@ lootBackpack = [];
 lootHelmet = [];
 lootVest = [];
 lootDevice = [];
+//declare var for import weapons
+import_w_weapons = objNull
+import_e_weapons = objNull
 //Vehicles Arrays
 invaderStaticWeapon = [];
 occupantStaticWeapon = [];

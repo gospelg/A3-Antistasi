@@ -629,6 +629,7 @@ server setVariable [import_wheel_apc,5000,true];
 server setVariable [import_track_apc,6500,true];
 server setVariable [import_heli,10000,true];
 server setVariable [import_tank,15000,true];
+server setVariable [import_weapons,1200,true];
 
 ////////////////////////////////////
 //     SERVER ONLY VARIABLES     ///

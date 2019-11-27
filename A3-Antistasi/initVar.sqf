@@ -106,6 +106,11 @@ lootBackpack = [];
 lootHelmet = [];
 lootVest = [];
 lootDevice = [];
+
+//declare var for import weapons
+import_w_weapons = objNull
+import_e_weapons = objNull
+
 //Vehicles Arrays
 invaderStaticWeapon = [];
 occupantStaticWeapon = [];
@@ -637,16 +642,28 @@ server setVariable [vehSDKTruck,300,true];											//300
 {server setVariable [_x,400,true]} forEach [SDKMGStatic,vehSDKBoat,vehSDKRepair];			//400
 {server setVariable [_x,800,true]} forEach [SDKMortar,staticATteamPlayer,staticAAteamPlayer];			//800
 
+//import costs
+server setVariable [import_UAV,500,true];
+server setVariable [import_UGV,1200,true];
+server setVariable [import_MRAP,2000,true];
+server setVariable [import_arty,5000,true];
+server setVariable [import_wheel_apc,5000,true];
+server setVariable [import_track_apc,6500,true];
+server setVariable [import_heli,10000,true];
+server setVariable [import_tank,15000,true];
+server setVariable [import_e_weapons,1200,true];
+server setVariable [import_w_weapons,1500,true];
+
 ////////////////////////////////////
 //     SERVER ONLY VARIABLES     ///
 ////////////////////////////////////
 [2,"Setting server only variables",_fileName] call A3A_fnc_log;
-server setVariable ["hr",8,true];														//initial HR value
-server setVariable ["resourcesFIA",1000,true];											//Initial FIA money pool value
+server setVariable ["hr",10,true];														//initial HR value
+server setVariable ["resourcesFIA",5000,true];											//Initial FIA money pool value
 skillFIA = 1;																		//Initial skill level for FIA soldiers
 prestigeNATO = 5;																	//Initial Prestige NATO
 prestigeCSAT = 5;																	//Initial Prestige CSAT
-prestigeOPFOR = [75, 50] select cadetMode;												//Initial % support for NATO on each city
+prestigeOPFOR = [50, 30] select cadetMode;												//Initial % support for NATO on each city
 prestigeBLUFOR = 0;																	//Initial % FIA support on each city
 countCA = 600;																		//600
 bombRuns = 0;
@@ -670,6 +687,11 @@ vehInGarage = [];
 destroyedBuildings = [];
 reportedVehs = [];
 playerHasBeenPvP = [];
+
+//define some singleplater parameters
+unlockedUnlimitedAmmo = 1;
+allowGuidedLaunchers = 1;
+allowUnlockedExplosives = 1;
 
 //Reinforcement logic
 reinforceMarkerOccupants = [];

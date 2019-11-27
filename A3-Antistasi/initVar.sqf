@@ -639,8 +639,8 @@ server setVariable [import_w_weapons,1500,true];
 //     SERVER ONLY VARIABLES     ///
 ////////////////////////////////////
 diag_log format ["%1: [Antistasi] | INFO | initVar | Setting Server Only Variables.",servertime];
-server setVariable ["hr",10,true];														//initial HR value
-server setVariable ["resourcesFIA",5000,true];											//Initial FIA money pool value
+server setVariable ["hr",8,true];														//initial HR value
+server setVariable ["resourcesFIA",1000,true];											//Initial FIA money pool value
 skillFIA = 1;																		//Initial skill level for FIA soldiers
 prestigeNATO = 5;																	//Initial Prestige NATO
 prestigeCSAT = 5;																	//Initial Prestige CSAT
@@ -669,6 +669,11 @@ destroyedBuildings = [];
 reportedVehs = [];
 playerHasBeenPvP = [];
 
+//define some singleplater parameters
+unlockedUnlimitedAmmo = 1;
+allowGuidedLaunchers = 1;
+allowUnlockedExplosives = 1;
+
 //Reinforcement logic
 reinforceMarkerOccupants = [];
 reinforceMarkerInvader = [];
@@ -686,11 +691,6 @@ outpostStaticsTiers = [0.4, 0.7, 1];
 otherUpdateTiers = [3, 7];
 otherStaticsTiers = [0.3, 1];
 [] call A3A_fnc_initPreference;
-
-//define some singleplater parameters
-unlockedUnlimitedAmmo = 1;
-allowGuidedLaunchers = 1;
-allowUnlockedExplosives = 1;
 
 ////////////////////////////////////
 // DECLARE VARIBALES FOR CLIENTS ///

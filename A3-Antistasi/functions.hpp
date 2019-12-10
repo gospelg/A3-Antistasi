@@ -40,6 +40,7 @@ class A3A
 		class citiesToCivPatrol {};
 		class citySupportChange {};
 		class commsMP {};
+        class createBreachChargeText {};
 		class createControls {};
 		class createOutpostsFIA {};
 		class createPetros {};
@@ -243,7 +244,6 @@ class A3A
 		class createDialog_setParams {};
 		class createDialog_shouldLoadPersonalSave {};
 		class dialogHQ {};
-		class difficultyMenu {};
 		class fastTravelRadio {};
 		class mineDialog {};
 		class moveHQObject {};
@@ -420,6 +420,7 @@ class A3A
 		class buildCreateVehicleCallback {};
 		class buildMinefield {};
 		class enemyNearCheck {};
+		class equipRebel {};
 		class FIAinit {};
 		class FIAskillAdd {};
 		class garrisonAdd {};

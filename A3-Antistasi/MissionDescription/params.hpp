@@ -242,6 +242,13 @@ class Params
           texts[] = {""};
           default = "";
      };
+	 class LogLevel
+	 {
+		  title = "Logging Level (Amount of detail in .rpt file)";
+		  values[] = {1,2,3};
+		  texts[] = {"Error", "Info", "Debug"};
+		  default = 2;
+	 };
      class CrateOptions
      {
           title = "LOOT CRATE OPTIONS";
@@ -256,19 +263,26 @@ class Params
 		  texts[] = {"False", "True"};
 		  default = 0;
 	 };
+	 class cratePlayerScaling
+	 {
+		title = "Decrease loot quantity as player count increases? (Yes is recommended for balance reasons)";
+		values[] = {0, 1};
+		texts[] = {"False", "True"};
+		default = 1;
+	 };
      class crateWepTypeMax
      {
           title = "Maximum Weapon Types in Crates";
-          values[] = {0,2,4,9};
-          texts[] = {"1","3","5","10"};
-          default = 4;
+          values[] = {0,2,4,6,8,12,16};
+          texts[] = {"1","3","5","7","9","13","17"};
+          default = 9;
      };
      class crateWepNumMax
      {
           title = "Maximum Weapon Quantity in Crates";
-          values[] = {0,1,3,5,10,15};
-          texts[] = {"None","1","3","5","10","15"};
-          default = 15;
+          values[] = {0,1,3,5,8,10,15};
+          texts[] = {"None","1","3","5","8","10","15"};
+          default = 8;
      };
      class Spacer1
      {

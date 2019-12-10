@@ -172,9 +172,15 @@ fn_SetStat = {
 			private _building = objNull;
 			{
 				_building = nearestObject [_x, "House"];
-				private _ruin = [_building] call BIS_fnc_createRuin;
-				//JIP on the _ruin, as repairRuinedBuilding will delete the ruin.
-				[_building, true] remoteExec ["hideObject", 0, _ruin];
+				if !(_building in antennas) then {
+					private _ruin = [_building] call BIS_fnc_createRuin;
+					//JIP on the _ruin, as repairRuinedBuilding will delete the ruin.
+					if !(isNull _ruin) then {
+						[_building, true] remoteExec ["hideObject", 0, _ruin];
+					} else {
+						diag_log format ["Loading Destroyed Buildings: Unable to create ruin for %1", typeOf _building];
+					};
+				};
 			} forEach destroyedBuildings;
 		};
 		if (_varName == 'minesX') then {
@@ -228,18 +234,27 @@ fn_SetStat = {
 			};
 		};
 		if (_varName == 'antennas') then {
-			antennasDead = +_varvalue;
+			antennasDead = [];
 			for "_i" from 0 to (count _varvalue - 1) do {
 			    _posAnt = _varvalue select _i;
 			    _mrk = [mrkAntennas, _posAnt] call BIS_fnc_nearestPosition;
 			    _antenna = [antennas,_mrk] call BIS_fnc_nearestPosition;
 			    {if ([antennas,_x] call BIS_fnc_nearestPosition == _antenna) then {[_x,false] spawn A3A_fnc_blackout}} forEach citiesX;
 			    antennas = antennas - [_antenna];
+				antennasDead pushBack _antenna;
 			    _antenna removeAllEventHandlers "Killed";
-			    _antenna setDamage [1,false];
+
+				private _ruin = [_antenna] call BIS_fnc_createRuin;
+
+				if !(isNull _ruin) then {
+					//JIP on the _ruin, as repairRuinedBuilding will delete the ruin.
+					[_antenna, true] remoteExec ["hideObject", 0, _ruin];
+				} else {
+					diag_log format ["Loading Antennas: Unable to create ruin for %1", typeOf _antenna];
+				};
+
 			    deleteMarker _mrk;
 			};
-			antennasDead = _varvalue;
 			publicVariable "antennas";
 			publicVariable "antennasDead";
 		};
@@ -308,7 +323,7 @@ fn_SetStat = {
 				vehicleBox setDir ((_varValue select 5) select 0);
 				vehicleBox setPos ((_varValue select 5) select 1);
 			};
-			{_x setPos _posHQ} forEach (playableUnits select {side _x == teamPlayer});
+			{_x setPos _posHQ} forEach ((call A3A_fnc_playableUnits) select {side _x == teamPlayer});
 		};
 		if (_varname == 'staticsX') then {
 			for "_i" from 0 to (count _varvalue) - 1 do {

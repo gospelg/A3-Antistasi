@@ -31,6 +31,14 @@ if (typeOf _crate == vehNATOAmmoTruck) then {
 	_crateDeviceTypeMax = _crateDeviceTypeMax * 2;
 };
 
+
+private _quantityScalingFactor = if (!cratePlayerScaling) then {1} else {
+	private _playerCount = if(!isNil "spoofedPlayerCount") then {spoofedPlayerCount} else {count (call A3A_fnc_playableUnits)};
+	//Scale it down to a 50% loot rate at 20 players.
+	1 / (1 + _playerCount / 20);
+};
+
+
 //Format [allWeapons, unlockedWeapons, Weighting]. 
 //We need to know the corresponding unlockedWeapons array, so we can check if they're all unlocked.
 private _weaponLootInfo = [
@@ -152,13 +160,28 @@ else
 {
 	{
 		params ["_max"];
+		floor (random [1, floor (_max/2), _max] * _quantityScalingFactor);
+	}
+};
+
+private _fnc_pickNumberOfTypes = if (bobChaosCrates) then
+{
+	{
+		params ["_max"];
+		floor random _max;
+	}
+} 
+else 
+{
+	{
+		params ["_max"];
 		floor random [1, floor (_max/2), _max];
 	}
 };
 
 //Weapons Loot
 [3, "Generating Weapons", "fn_NATOCrate"] call A3A_fnc_log;
-for "_i" from 0 to floor random _crateWepTypeMax do {
+for "_i" from 0 to (_crateWepTypeMax call _fnc_pickNumberOfTypes) do {
 	private _loot = call _fnc_pickWeapon;
 	[3, format ["Adding weapon: %1", _loot],"fn_NATOCrate"] call A3A_fnc_log;
 
@@ -170,11 +193,16 @@ for "_i" from 0 to floor random _crateWepTypeMax do {
 		_amount = crateWepNumMax call _fnc_pickAmount;
 		_crate addWeaponWithAttachmentsCargoGlobal [[ _loot, "", "", "", [], [], ""], _amount];
 		for "_i" from 0 to _amount do {
-			_magazines = getArray (configFile / "CfgWeapons" / _loot / "magazines");
-			[3, format ["Grabbing a %1 for %2", _magazines, _loot],"fn_NATOCrate"] call A3A_fnc_log;
-			_magAmount = selectRandom [0,1,2];
-			[3, format ["Spawning %1 magazines for %2", _magAmount, _loot],"fn_NATOCrate"] call A3A_fnc_log;
-			_crate addMagazineCargoGlobal [selectrandom _magazines, _magAmount];
+			_magazine = selectRandom getArray (configFile / "CfgWeapons" / _loot / "magazines");
+			//Abort if the gun has no magazines.
+			if (isNil "_magazine") exitWith {};
+			_magAmount = if ((getText (configFile >> "CfgMagazines" >> _magazine >> "ammo") isKindOf "MissileBase")) then {
+				floor random 3;
+			} else {
+				floor random [1,6,1]
+			};
+			[3, format ["Spawning %1 magazines of %2 for %3", _magAmount, _magazine, _loot],"fn_NATOCrate"] call A3A_fnc_log;
+			_crate addMagazineCargoGlobal [_magazine, _magAmount];
 			[3, format ["Spawning %1 of %2", _amount, _loot],"fn_NATOCrate"] call A3A_fnc_log;
 		};
 	};
@@ -224,7 +252,7 @@ for "_i" from 0 to floor random _crateExplosiveTypeMax do {
 	};
 };
 //Attachments Loot
-for "_i" from 0 to floor random _crateAttachmentTypeMax do {
+for "_i" from 0 to (_crateAttachmentTypeMax call _fnc_pickNumberOfTypes) do {
 	_available = (lootAttachment - _unlocks - itemCargo _crate);
 	_loot = selectRandom _available;
 	if (isNil "_loot") then {

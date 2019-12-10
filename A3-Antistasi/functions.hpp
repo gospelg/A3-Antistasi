@@ -1,5 +1,33 @@
 class A3A
 {
+	class init
+	{
+		//Main initialisation functions.
+		class initServer {};
+		class initClient {};
+		
+		//Other initialisation functions (generally called by the above)
+		class cityinfo {};
+		class credits {};
+		class initFuncs {};
+		class initGarrisons {};
+		class initGetMissionPath {};
+		class initSpawnPlaces {};
+		
+		class initVar {};
+		class initVarClient {};
+		class initVarCommon {};
+		class initVarServer {};
+		
+		class initZones {};
+		class modBlacklist {};
+		class playerMarkers {};
+		class prepareMarkerArrays {};
+		class reinitY {};
+		class resourcecheck {};
+		class tags {};
+	};
+	
 	class Base
 	{
 		class addActionBreachVehicle {};
@@ -12,6 +40,7 @@ class A3A
 		class citiesToCivPatrol {};
 		class citySupportChange {};
 		class commsMP {};
+        class createBreachChargeText {};
 		class createControls {};
 		class createOutpostsFIA {};
 		class createPetros {};
@@ -49,7 +78,7 @@ class A3A
 		class outpostDialog {};
 		class patrolDestinations {};
 		class placementSelection {};
-		class playerHasBeenPvPCheck {};
+		class playableUnits {};
 		class powerCheck {};
 		class powerReorg {};
 		class prestige {};
@@ -192,6 +221,7 @@ class A3A
 		class reinforcementsAI {};
 		class remoteBattle {};
 		class removeVehFromPool {};
+		class safeVehicleSpawn {};
 		class spawnGroup {};
 		class vehAvailable {};
 		class VEHdespawner {};
@@ -202,6 +232,7 @@ class A3A
 	class Debugging
 	{
 		class deleteEmptyGroupsOnSide {};
+		class installSchrodingersBuildingFix {};
 		class spawnDebuggingLoop {};
 	};
 
@@ -210,10 +241,10 @@ class A3A
 		class buyVehicle {};
 		class buyVehicleCiv {};
 		class clearForest {};
+		class createDialog_setParams {};
+		class createDialog_shouldLoadPersonalSave {};
 		class dialogHQ {};
-		class difficultyMenu {};
 		class fastTravelRadio {};
-		class firstLoad {};
 		class mineDialog {};
 		class moveHQObject {};
 		class skiptime {};
@@ -293,7 +324,7 @@ class A3A
 		class taskUpdate {};
 		class underAttack {};
 	};
-	
+
 	class ModsAndDLC {
 		class getModOfConfigClass {};
 		class initDisabledMods {};
@@ -312,6 +343,7 @@ class A3A
 		class dress {};
 		class empty {};
 		class equipmentClassToCategories {};
+		class equipmentIsValidForCurrentModset {};
 		class equipmentSort {};
 		class getRadio {};
 		class itemSort {};
@@ -327,16 +359,19 @@ class A3A
 
 	class OrgPlayers
 	{
-		class assigntheBoss {};
 		class donateMoney {};
 		class isMember {};
+		class makePlayerBossIfEligible {};
 		class memberAdd {};
 		class membersList {};
 		class playerScoreAdd {};
+		class promotePlayer {};
 		class ranksMP {};
 		class resourcesPlayer {};
 		class theBossInit {};
+		class theBossToggleEligibility {};
 		class theBossSteal {};
+		class assignBossIfNone {};
 		class tierCheck {};
 	};
 
@@ -368,6 +403,12 @@ class A3A
 		class punishment_warden {};
 	};
 
+	class pvp
+	{
+		class pvpCheck {};
+		class playerHasBeenPvPCheck {};
+	};
+
 	class REINF
 	{
 		class addBombRun {};
@@ -379,6 +420,7 @@ class A3A
 		class buildCreateVehicleCallback {};
 		class buildMinefield {};
 		class enemyNearCheck {};
+		class equipRebel {};
 		class FIAinit {};
 		class FIAskillAdd {};
 		class garrisonAdd {};
@@ -442,20 +484,6 @@ class A3A
 		class createDataObject {};
 		class dateToTimeString {};
 		class log {};
-	};
-
-	class init
-	{
-		class cityinfo {};
-		class credits {};
-		class initGarrisons {};
-		class initGetMissionPath {};
-		class initSpawnPlaces {};
-		class modBlacklist {};
-		class playerMarkers {};
-		class prepareMarkerArrays {};
-		class reinitY {};
-		class resourcecheck {};
-		class tags {};
+		class vehicleWillCollideAtPosition {};
 	};
 };

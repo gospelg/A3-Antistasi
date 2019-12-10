@@ -15,7 +15,9 @@ private ["_garrison"];
 ["bombRuns", bombRuns] call fn_SaveStat;
 ["smallCAmrk", smallCAmrk] call fn_SaveStat;
 ["membersX", membersX] call fn_SaveStat;
-["antennas", antennasDead] call fn_SaveStat;
+private _antennasDeadPositions = [];
+{ _antennasDeadPositions pushBack getPos _x; } forEach antennasDead;
+["antennas", _antennasDeadPositions] call fn_SaveStat;
 //["mrkNATO", (markersX - controlsX) select {sidesX getVariable [_x,sideUnknown] == Occupants}] call fn_SaveStat;
 ["mrkSDK", (markersX - controlsX - outpostsFIA) select {sidesX getVariable [_x,sideUnknown] == teamPlayer}] call fn_SaveStat;
 ["mrkCSAT", (markersX - controlsX) select {sidesX getVariable [_x,sideUnknown] == Invaders}] call fn_SaveStat;
@@ -32,7 +34,7 @@ private ["_garrison"];
 ["nextTick", nextTick - time] call fn_SaveStat;
 ["weather",[fogParams,rain]] call fn_SaveStat;
 ["destroyedBuildings",destroyedBuildings] call fn_SaveStat;
-//["firstLoad",false] call fn_SaveStat;
+
 private ["_hrBackground","_resourcesBackground","_veh","_typeVehX","_weaponsX","_ammunition","_items","_backpcks","_containers","_arrayEst","_posVeh","_dierVeh","_prestigeOPFOR","_prestigeBLUFOR","_city","_dataX","_markersX","_garrison","_arrayMrkMF","_arrayOutpostsFIA","_positionOutpost","_typeMine","_posMine","_detected","_typesX","_exists","_friendX"];
 
 _hrBackground = (server getVariable "hr") + ({(alive _x) and (not isPlayer _x) and (_x getVariable ["spawner",false]) and ((group _x in (hcAllGroups theBoss) or (isPlayer (leader _x))) and (side group _x == teamPlayer))} count allUnits);

@@ -21,6 +21,7 @@ SDKGL = ["UK3CB_UN_B_GL","UK3CB_UN_B_GL"];
 SDKMil = ["UK3CB_UN_B_RIF_1","UK3CB_UN_B_RIF_2"];
 SDKSL = ["UK3CB_UN_B_TL","UK3CB_UN_B_SL"];
 SDKEng = ["UK3CB_UN_B_ENG","UK3CB_UN_B_ENG"];
+SDKAAman = ["UK3CB_UN_B_AT","UK3CB_UN_B_AT"];
 
 ////////////////////////////////////
 //            GROUPS             ///
@@ -32,11 +33,12 @@ groupsSDKSquadEng = [SDKSL,SDKGL,SDKMil,SDKMG,SDKExp,SDKATman,SDKEng,SDKMedic];
 groupsSDKSquadSupp = [SDKSL,SDKGL,SDKMil,SDKMG,SDKATman,SDKMedic,[staticCrewTeamPlayer,staticCrewTeamPlayer],[staticCrewTeamPlayer,staticCrewTeamPlayer]];
 groupsSDKSniper = [SDKSniper,SDKSniper];
 groupsSDKSentry = [SDKGL,SDKMil];
+groupsSDKAA = [SDKSL,SDKAAman];
 
 //Rebel Unit Tiers (for costs)
 sdkTier1 = SDKMil + [staticCrewTeamPlayer] + SDKMG + SDKGL + SDKATman;
 sdkTier2 = SDKMedic + SDKExp + SDKEng;
-sdkTier3 = SDKSL + SDKSniper;
+sdkTier3 = SDKSL + SDKSniper + SDKAAman;
 soldiersSDK = sdkTier1 + sdkTier2 + sdkTier3;
 
 ////////////////////////////////////

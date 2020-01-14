@@ -149,7 +149,7 @@ while {true} do
 		[_veh,1] remoteExec ["setVehicleAmmo",_veh];
 		};
 	} forEach vehicles;
-	countCA = countCA - 600;
+	countCA = countCA - (300 * skillMult);
 	if (countCA < 0) then {countCA = 0};
 	publicVariable "countCA";
 	if ((countCA == 0)/* and (diag_fps > minimoFPS)*/) then

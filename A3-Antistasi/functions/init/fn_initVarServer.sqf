@@ -292,7 +292,7 @@ private _templateVariables = [
 	"SDKMG",
 	"SDKExp",
 	"SDKGL",
-	"SDKAA",
+	"SDKAAman",
 	"SDKMil",
 	"SDKSL",
 	"SDKEng",

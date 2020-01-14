@@ -556,8 +556,8 @@ DECLARE_SERVER_VAR(sniperGroups, _sniperGroups);
 [] call A3A_fnc_loot;
 
 //create import weapon objects
-import_w_weapons = objNull;
-import_e_weapons = objNull;
+import_w_weapons = "I_supplyCrate_F";
+import_e_weapons = "I_supplyCrate_F";
 
 ////////////////////////////////////
 //   CLASSING TEMPLATE VEHICLES  ///

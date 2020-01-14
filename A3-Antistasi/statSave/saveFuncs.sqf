@@ -112,8 +112,8 @@ fn_SetStat = {
 		if (_varName == 'difficultyX') then {
 			if !(isMultiplayer) then {
 				skillMult = _varValue;
-				if (skillMult == 1) then {minWeaps = 15};
-				if (skillMult == 3) then {minWeaps = 40};
+				if (skillMult == 1) then {minWeaps = 5};
+				if (skillMult == 3) then {minWeaps = 25};
 			};
 		};
 		if(_varName == 'gameMode') then {

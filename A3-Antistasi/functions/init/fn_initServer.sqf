@@ -93,12 +93,11 @@ if (gameMode != 1) then {
 	if (gameMode == 3) then {"CSAT_carrier" setMarkerAlpha 0};
 	if (gameMode == 4) then {"NATO_carrier" setMarkerAlpha 0};
 };
-[] spawn A3A_fnc_initPetros;
 ["Initialize"] call BIS_fnc_dynamicGroups;//Exec on Server
 hcArray = [];
 
 waitUntil {count (call A3A_fnc_playableUnits) > 0};
-waitUntil {({(isPlayer _x) and (!isNull _x) and (_x == _x)} count allUnits) == (count (call A3A_fnc_playableUnits))};//ya estamos todos
+waitUntil {({(isPlayer _x) and (!isNull _x) and (_x == _x)} count allUnits) == (count (call A3A_fnc_playableUnits))};
 [] spawn A3A_fnc_modBlacklist;
 
 if (loadLastSave) then {
@@ -168,6 +167,7 @@ if !(loadLastSave) then {
 	} foreach initialRebelEquipment;
 	[2,"Initial arsenal unlocks completed",_fileName] call A3A_fnc_log;
 };
+call A3A_fnc_createPetros;
 
 [[petros,"hint","Server load finished"],"A3A_fnc_commsMP"] call BIS_fnc_MP;
 
@@ -190,7 +190,10 @@ addMissionEventHandler ["BuildingChanged", {
 serverInitDone = true; publicVariable "serverInitDone";
 [2,"Setting serverInitDone as true",_fileName] call A3A_fnc_log;
 
+
+[2, "Waiting for HQ placement", _fileName] call A3A_fnc_log;
 waitUntil {sleep 1;!(isNil "placementDone")};
+[2, "HQ Placed, continuing init", _fileName] call A3A_fnc_log;
 distanceXs = [] spawn A3A_fnc_distance;
 [] spawn A3A_fnc_resourcecheck;
 [] execVM "Scripts\fn_advancedTowingInit.sqf";
@@ -205,4 +208,5 @@ savingServer = false;
 		sleep 30;
 	};
 };
+execvm "functions\init\fn_initSnowFall.sqf";
 [2,"initServer completed",_fileName] call A3A_fnc_log;

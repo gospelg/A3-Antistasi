@@ -15,6 +15,8 @@ if(_vehicleType != "") then
   if(!(_vehicleType isKindOf "Air")) then
   {
     _vehicleObj = createVehicle [_vehicleType, _pos, [], 0 , "CAN_COLLIDE"];
+    // Hopefully doesn't make vehicles drive backwards unless they'd explode otherwise
+//    _vehicleObj = [_vehicleType, _pos, 10, 3, true] call A3A_fnc_safeVehicleSpawn;
   }
   else
   {
@@ -72,9 +74,11 @@ private _crewObjs = [];
 
 sleep 0.5;
 
-private _cargoGroup = grpNull;
+// Removed same-group case because split/join is broken for it
+private _cargoGroup = createGroup _side;
 private _cargoObjs = [];
 
+/*
 //Put cargo into a seperate group if they are cargo of a plane or large
 if(_vehicleObj isKindOf "Air" || {count _cargoData >= 6}) then
 {
@@ -84,6 +88,7 @@ else
 {
   _cargoGroup = _vehicleGroup;
 };
+*/
 
 private _unit = objNull;
 //Spawning in cargo

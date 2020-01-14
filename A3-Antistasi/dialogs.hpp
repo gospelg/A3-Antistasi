@@ -383,7 +383,7 @@ class garrison_recruit 			{
 			y = 0.415981 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			action = "nul = [SDKAA] spawn A3A_fnc_garrisonAdd";
+			action = "nul = [SDKAAman] spawn A3A_fnc_garrisonAdd";
 		};
 		class HQ_button_marksman: RscButton
 		{

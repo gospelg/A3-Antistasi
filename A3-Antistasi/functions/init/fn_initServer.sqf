@@ -55,7 +55,7 @@ if (isMultiplayer) then {
 	pvpEnabled = false;
 	skillMult = if (isNil "skillMult") then {2} else {skillMult};
 	//Acceptable to default this one.
-	minWeaps = if (isNil "minWeaps") then {25} else {minWeaps};
+	minWeaps = if (isNil "minWeaps") then {10} else {minWeaps};
 	memberOnlyMagLimit = 0;
 	allowMembersFactionGarageAccess = true;
 	civTraffic = 1;

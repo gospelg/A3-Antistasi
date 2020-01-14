@@ -21,6 +21,7 @@ SDKGL = ["rhsgref_cdf_b_ngd_grenadier","rhsgref_cdf_b_reg_grenadier"];
 SDKMil = ["rhsgref_cdf_b_ngd_rifleman_lite","rhsgref_cdf_b_para_rifleman_lite"];
 SDKSL = ["rhsgref_cdf_b_ngd_squadleader","rhsgref_cdf_b_reg_squadleader"];
 SDKEng = ["rhsgref_cdf_b_ngd_engineer","rhsgref_cdf_b_reg_engineer"];
+SDKAAman = ["rhsgref_cdf_b_ngd_grenadier_rpg","rhsgref_cdf_b_reg_grenadier_rpg"];
 
 ////////////////////////////////////
 //            GROUPS             ///
@@ -32,11 +33,12 @@ groupsSDKSquadEng = [SDKSL,SDKGL,SDKMil,SDKMG,SDKExp,SDKATman,SDKEng,SDKMedic];
 groupsSDKSquadSupp = [SDKSL,SDKGL,SDKMil,SDKMG,SDKATman,SDKMedic,[staticCrewTeamPlayer,staticCrewTeamPlayer],[staticCrewTeamPlayer,staticCrewTeamPlayer]];
 groupsSDKSniper = [SDKSniper,SDKSniper];
 groupsSDKSentry = [SDKGL,SDKMil];
+groupsSDKAA = [SDKSL,SDKAAman];
 
 //Rebel Unit Tiers (for costs)
 sdkTier1 = SDKMil + [staticCrewTeamPlayer] + SDKMG + SDKGL + SDKATman;
 sdkTier2 = SDKMedic + SDKExp + SDKEng;
-sdkTier3 = SDKSL + SDKSniper;
+sdkTier3 = SDKSL + SDKSniper + SDKAAman;
 soldiersSDK = sdkTier1 + sdkTier2 + sdkTier3;
 
 ////////////////////////////////////

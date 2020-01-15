@@ -23,7 +23,7 @@ SDKGL = ["I_C_Soldier_Bandit_6_F","I_C_Soldier_Para_6_F"];
 SDKMil = ["I_C_Soldier_Bandit_7_F","I_C_Soldier_Para_1_F"];
 SDKSL = ["I_C_Soldier_Bandit_4_F","I_C_Soldier_Para_2_F"];
 SDKEng = ["I_G_engineer_F","I_G_engineer_F"];
-SDKAAman = ["I_C_Soldier_Bandit_2_F","I_C_Soldier_Para_5_F"];
+SDKAAman = ["I_G_Soldier_A_F","I_Soldier_AA_F"];
 
 ////////////////////////////////////
 //            GROUPS             ///
@@ -109,3 +109,13 @@ initialRebelEquipment append ["Binocular","acc_flashlight"];
 //TFAR unlocks
 if (hasTFAR) then {initialRebelEquipment append ["tf_microdagr","tf_anprc154"]};
 if (startLR) then {initialRebelEquipment pushBack "tf_anprc155"};
+
+//import stuff
+import_UAV = "I_UAV_01_F";
+import_UGV = "I_UGV_01_rcws_F";
+import_MRAP = "I_MRAP_03_gmg_F";
+import_arty = "I_Truck_02_MRL_F";
+import_wheel_apc = "I_APC_Wheeled_03_cannon_F";
+import_track_apc = "I_APC_tracked_03_cannon_F";
+import_heli = "I_Heli_light_03_dynamicLoadout_F";
+import_tank = "I_MBT_03_cannon_F";

@@ -9,7 +9,7 @@ clearWeaponCargoGlobal _crate;
 clearItemCargoGlobal _crate;
 clearBackpackCargoGlobal _crate;
 _crate call jn_fnc_logistics_addAction;
-_typeMax = 3
+_typeMax = 3;
 
 //Backpacks Loot
 for "_i" from 0 to floor random _typeMax do {

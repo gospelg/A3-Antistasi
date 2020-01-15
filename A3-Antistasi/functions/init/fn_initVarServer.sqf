@@ -96,9 +96,9 @@ DECLARE_SERVER_VAR(reportedVehs, []);
 //Currently destroyed buildings.
 DECLARE_SERVER_VAR(destroyedBuildings, []);
 //Initial HR
-server setVariable ["hr",10,true];
+if (isNil "hr") then {server setVariable ["hr",10,true]};
 //Initial faction money pool
-server setVariable ["resourcesFIA",5000,true];
+if (isNil "resourcesFIA") then {server setVariable ["resourcesFIA",5000,true]};
 
 ////////////////////////////////////
 //     SERVER ONLY VARIABLES     ///

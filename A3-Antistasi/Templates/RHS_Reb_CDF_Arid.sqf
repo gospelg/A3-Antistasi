@@ -21,7 +21,7 @@ SDKGL = ["rhsgref_cdf_b_ngd_grenadier","rhsgref_cdf_b_reg_grenadier"];
 SDKMil = ["rhsgref_cdf_b_ngd_rifleman_lite","rhsgref_cdf_b_para_rifleman_lite"];
 SDKSL = ["rhsgref_cdf_b_ngd_squadleader","rhsgref_cdf_b_reg_squadleader"];
 SDKEng = ["rhsgref_cdf_b_ngd_engineer","rhsgref_cdf_b_reg_engineer"];
-SDKAAman = ["rhsgref_cdf_b_ngd_grenadier_rpg","rhsgref_cdf_b_reg_grenadier_rpg"];
+SDKAAman = ["rhsgref_cdf_b_ngd_specialist_aa","rhsgref_cdf_b_reg_specialist_aa"];
 
 ////////////////////////////////////
 //            GROUPS             ///
@@ -108,3 +108,12 @@ initialRebelEquipment append ["rhs_acc_2dpZenit","Binocular"];
 //TFAR Unlocks
 if (hasTFAR) then {initialRebelEquipment append ["tf_microdagr","tf_rf7800str"]};
 if (startLR) then {initialRebelEquipment pushBack "tf_rt1523g_big_rhs"};
+
+import_UAV = "rhs_pchela1t_vvs";
+import_UGV = "rhsgref_ins_g_gaz66_zu23";
+import_MRAP = "rhsgref_BRDM2_HQ_ins_g";
+import_arty = "rhsgref_ins_g_BM21";
+import_wheel_apc = "rhsgref_nat_btr70";
+import_track_apc = "rhsgref_ins_g_bmp2";
+import_heli = "RHS_Mi24P_vdv";
+import_tank = "rhsgref_ins_g_t72ba";

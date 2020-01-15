@@ -21,7 +21,7 @@ SDKGL = ["rhsgref_nat_grenadier","rhsgref_nat_pmil_grenadier"];
 SDKMil = ["rhsgref_nat_rifleman_mp44","rhsgref_nat_pmil_rifleman"];
 SDKSL = ["rhsgref_nat_commander","rhsgref_nat_pmil_commander"];
 SDKEng = ["rhsgref_cdf_ngd_engineer","rhsgref_cdf_reg_engineer"];
-SDKAAman = ["rhsgref_nat_grenadier_rpg","rhsgref_nat_pmil_grenadier_rpg"];
+SDKAAman = ["rhsgref_cdf_reg_specialist_aa","rhsgref_cdf_reg_specialist_aa"];
 
 ////////////////////////////////////
 //            GROUPS             ///
@@ -107,3 +107,12 @@ initialRebelEquipment append ["rhs_acc_2dpZenit","Binocular"];
 //TAFR Unlocks
 if (hasTFAR) then {initialRebelEquipment append ["tf_microdagr","tf_anprc154"]};
 if (startLR) then {initialRebelEquipment pushBack "tf_anprc155_coyote"};
+
+import_UAV = "rhs_pchela1t_vvs";
+import_UGV = "rhsgref_ins_g_gaz66_zu23";
+import_MRAP = "rhsgref_BRDM2_HQ_ins_g";
+import_arty = "rhsgref_ins_g_BM21";
+import_wheel_apc = "rhsgref_nat_btr70";
+import_track_apc = "rhsgref_ins_g_bmp2";
+import_heli = "RHS_Mi24P_vdv";
+import_tank = "rhsgref_ins_g_t72ba";

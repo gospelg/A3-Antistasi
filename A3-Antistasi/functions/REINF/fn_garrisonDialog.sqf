@@ -83,7 +83,7 @@ else
 		_ChildControl = _display displayCtrl 108;
 		_ChildControl  ctrlSetTooltip format ["Cost: %1 €",(server getVariable staticCrewTeamPlayer) + ([SDKMortar] call A3A_fnc_vehiclePrice)];
 		_ChildControl = _display displayCtrl 109;
-		_ChildControl  ctrlSetTooltip format ["Cost: %1 €",server getVariable (SDKGL select 0)];
+		_ChildControl  ctrlSetTooltip format ["Cost: %1 €",server getVariable (SDKAAman select 0)];
 		_ChildControl = _display displayCtrl 110;
 		_ChildControl  ctrlSetTooltip format ["Cost: %1 €",server getVariable (SDKSniper select 0)];
 		_ChildControl = _display displayCtrl 111;

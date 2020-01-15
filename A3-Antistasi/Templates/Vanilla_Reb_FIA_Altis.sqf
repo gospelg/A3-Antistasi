@@ -41,7 +41,7 @@ groupsSDKAA = [SDKSL,SDKAAman];
 //Rebel Unit Tiers (for costs)
 sdkTier1 = SDKMil + [staticCrewTeamPlayer] + SDKMG + SDKGL + SDKATman;
 sdkTier2 = SDKMedic + SDKExp + SDKEng;
-sdkTier3 = SDKSL + SDKSniper SDKAAman;
+sdkTier3 = SDKSL + SDKSniper + SDKAAman;
 soldiersSDK = sdkTier1 + sdkTier2 + sdkTier3;
 
 ////////////////////////////////////

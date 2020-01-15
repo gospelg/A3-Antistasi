@@ -238,6 +238,8 @@ class A3A
 
 	class Dialogs
 	{
+		class buyArmor {};
+		class buySupplies{};
 		class buyVehicle {};
 		class buyVehicleCiv {};
 		class clearForest {};

@@ -34,6 +34,7 @@ if (_typeX in squadLeaders) then {
 	_unit setskill ["courage",_skill + 0.2];
 	_unit setskill ["commanding",_skill + 0.2];
 };
+
 if (_typeX in SDKSniper) then {
 	_unit setskill ["aimingAccuracy",_skill + 0.2];
 	_unit setskill ["aimingShake",_skill + 0.2];

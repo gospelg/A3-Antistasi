@@ -107,6 +107,14 @@ switch (true) do {
 			};
 		};
 	};
+		case (_unitClass in SDKAAman): {
+		[_unit,unlockedRifles] call A3A_fnc_randomRifle;
+		if !(unlockedAT isEqualTo []) then {
+			[_unit, selectRandom unlockedAA, 4] call _addWeaponAndMags;
+		} else {
+			[_unit, selectRandom unlockedAT, 4] call _addWeaponAndMags;
+		};
+	};
 	// squad leaders and 
 	case (_unitClass in squadLeaders): {
 		[_unit,unlockedRifles] call A3A_fnc_randomRifle;

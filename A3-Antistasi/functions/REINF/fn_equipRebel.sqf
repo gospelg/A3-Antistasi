@@ -50,6 +50,14 @@ if !(_unlockedSmokes isEqualTo []) then { _unit addMagazines [selectRandom _unlo
 
 
 private _unitClass = typeOf _unit;
+if (_unitClass in SDKAAman) then {
+	[_unit,unlockedRifles] call A3A_fnc_randomRifle;
+	if !(unlockedAA isEqualTo []) then {
+		[_unit, selectRandom unlockedAA, 4] call _addWeaponAndMags;
+	} else {
+		[_unit, selectRandom allAA, 4] call _addWeaponAndMags;
+	};
+};
 
 switch (true) do {
 	case (_unitClass in SDKSniper): {
@@ -105,14 +113,6 @@ switch (true) do {
 			if (hasIFA) then {
 				[_unit, "LIB_PTRD", 10] call _addWeaponAndMags;
 			};
-		};
-	};
-		case (_unitClass in SDKAAman): {
-		[_unit,unlockedRifles] call A3A_fnc_randomRifle;
-		if !(unlockedAT isEqualTo []) then {
-			[_unit, selectRandom unlockedAA, 4] call _addWeaponAndMags;
-		} else {
-			[_unit, selectRandom unlockedAT, 4] call _addWeaponAndMags;
 		};
 	};
 	// squad leaders and 

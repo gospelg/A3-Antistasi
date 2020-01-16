@@ -3189,7 +3189,7 @@ class heavy_metal 		{
 		class HQ_frame: RscFrame
 		{
 			idc = 102;
-			text = "Recruitment Options"; //--- ToDo: Localize;
+			text = "Import Vehicles"; //--- ToDo: Localize;
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;
@@ -3297,11 +3297,12 @@ class heavy_metal 		{
 	};
 };
 
-class import_supplies 			{
+class import_supplies			{
 	idd=-1;
 	movingenable=false;
 
 	class controls {
+		//Structure
 		class HQ_box: BOX
 		{
 			idc = -1;
@@ -3314,47 +3315,69 @@ class import_supplies 			{
 		class HQ_frame: RscFrame
 		{
 			idc = -1;
-			text = "Buy Supplies"; //--- ToDo: Localize;
+			text = "Import Supplies";
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;
 			h = 0.28 * safezoneH;
 		};
-		class HQ_button_mortar: RscButton
+		class HQ_button_back: RscButton
 		{
 			idc = -1;
-			text = "Import Eastern Weapons"; //--- ToDo: Localize;
+			text = $STR_antistasi_dialogs_generic_button_back_text;
+			x = 0.61 * safezoneW + safezoneX;
+			y = 0.251941 * safezoneH + safezoneY;
+			w = 0.06 * safezoneW;//0.175015
+			h = 0.05 * safezoneH;
+			action = "closeDialog 0;_nul = createDialog ""portshop_option"";";
+		};
+		//Action Buttons
+		class 4slots_L1: RscButton
+		{
+			idc = -1;
+			text = "buy supply txt";
+			tooltip = "An assortment of non-lethal, but useful gear. Scopes, NVGs, that sort of thing. $750";
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Cheap, reliable, and clever. This shipment is full of glorious Russian and Chinese hardware. $1200";
-			action = "closeDialog 0;nul = [import_e_weapons] spawn A3A_fnc_buySupplies;";
+			action = "closeDialog 0;nul=[] spawn A3A_fnc_buySupplies;";
 		};
-		class HQ_button_MG: RscButton
+		class 4slots_R1: RscButton
 		{
 			idc = -1;
-			text = "Import Western Weapons"; //--- ToDo: Localize;
-			x = 0.37749 * safezoneW + safezoneX;
-			y = 0.415981 * safezoneH + safezoneY;
-			w = 0.175015 * safezoneW;
-			h = 0.0560125 * safezoneH;
-			tooltip = "No one makes guns quite like America makes guns. The finest precision machined tools of death, yours for $1500";
-			action = "closeDialog 0;nul = [import_w_weapons] spawn A3A_fnc_buySupplies;";
-		};
-		class HQ_button_AT: RscButton
-		{
-			idc = -1;
-			text = "Buy Body Armor"; //--- ToDo: Localize;
+			text = "Buy Body Armor";
+			tooltip = "Protect your investments! Enought body armor for you and your friends! $2,500";
 			x = 0.482498 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			tooltip = "Protect your investments! Enought body armor for you and your friends! $2,500";
 			action = "closeDialog 0;nul=[] spawn A3A_fnc_buyArmor;";
 		};
+		class 4slots_L2: RscButton
+		{
+			idc = -1;
+			text = "Buy Weapons";
+			tooltip = "Weapons, ammo, and other gear. Whatever our smuggler can get us. $1500";
+			x = 0.272481 * safezoneW + safezoneX;
+			y = 0.415981 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			action = "closeDialog 0;nul=[] spawn A3A_fnc_buyWeapons;";
+		};
+		class 4slots_R2: RscButton
+		{
+			idc = -1;
+			text = "Buy Heavy Weapons";
+			tooltip = "I hear there's guided missiles in this shipment. Better be for how expensive it is. $3,500";
+			x = 0.482498 * safezoneW + safezoneX;
+			y = 0.415981 * safezoneH + safezoneY;
+			w = 0.175015 * safezoneW;
+			h = 0.0560125 * safezoneH;
+			action = "closeDialog 0;nul=[] spawn A3A_fnc_buyHeavyWeapons;";
+		};
 	};
-};
+}; 
 
 class RscTitles {
 	class Default {

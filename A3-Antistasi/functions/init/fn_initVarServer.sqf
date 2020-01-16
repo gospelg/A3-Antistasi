@@ -557,10 +557,6 @@ DECLARE_SERVER_VAR(sniperGroups, _sniperGroups);
 [2,"Building loot lists",_fileName] call A3A_fnc_log;
 [] call A3A_fnc_loot;
 
-//create import weapon objects
-import_w_weapons = "B_supplyCrate_F";
-import_e_weapons = "O_supplyCrate_F";
-
 ////////////////////////////////////
 //   CLASSING TEMPLATE VEHICLES  ///
 ////////////////////////////////////

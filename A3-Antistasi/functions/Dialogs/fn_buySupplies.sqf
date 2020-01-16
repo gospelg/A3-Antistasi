@@ -32,7 +32,7 @@ for "_i" from 0 to floor random _crateItemTypeMax do {
 	};
 };
 
-for "_i" from 0 to (_crateAttachmentTypeMax call _fnc_pickNumberOfTypes) do {
+for "_i" from 0 to floor random _crateAttachmentTypeMax do {
 	_available = (lootAttachment - _unlocks - itemCargo _crate);
 	_loot = selectRandom _available;
 	if (isNil "_loot") then {

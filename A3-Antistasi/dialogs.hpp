@@ -3189,7 +3189,7 @@ class heavy_metal 		{
 		class HQ_frame: RscFrame
 		{
 			idc = 102;
-			text = "Recruitment Options"; //--- ToDo: Localize;
+			text = "Import Vehicles"; //--- ToDo: Localize;
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;
@@ -3297,7 +3297,7 @@ class heavy_metal 		{
 	};
 };
 
-class import_supplies  			{
+class import_supplies			{
 	idd=-1;
 	movingenable=false;
 
@@ -3315,7 +3315,7 @@ class import_supplies  			{
 		class HQ_frame: RscFrame
 		{
 			idc = -1;
-			text = $STR_antistasi_dialogs_build_frame_text;
+			text = "Import Supplies";
 			x = 0.254979 * safezoneW + safezoneX;
 			y = 0.233941 * safezoneH + safezoneY;
 			w = 0.425038 * safezoneW;

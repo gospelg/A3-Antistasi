@@ -1,5 +1,4 @@
-private _type = _this select 0;
-_cost = [_type] call A3A_fnc_vehiclePrice;
+_cost = 1200;
 _resourcesFIA = server getVariable "resourcesFIA";
 if (_resourcesFIA < _cost) exitWith {hint format ["You do not have enough money! %1 € required",_cost]};
 if ([player,300] call A3A_fnc_enemyNearCheck) exitWith {Hint "You cannot buy supplies with enemies nearby"};

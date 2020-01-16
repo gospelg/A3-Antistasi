@@ -239,7 +239,6 @@ class A3A
 	class Dialogs
 	{
 		class buyArmor {};
-		class buyGadgets {};
 		class buyHeavyWeapons {};
 		class buySupplies{};
 		class buyWeapons {};

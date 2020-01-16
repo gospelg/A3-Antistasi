@@ -242,6 +242,7 @@ class A3A
 		class buyGadgets {};
 		class buyHeavyWeapons {};
 		class buySupplies{};
+		class buyWeapons {};
 		class buyVehicle {};
 		class buyVehicleCiv {};
 		class clearForest {};

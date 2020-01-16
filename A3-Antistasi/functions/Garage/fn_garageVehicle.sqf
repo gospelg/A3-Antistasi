@@ -66,6 +66,11 @@ if (_pool) then
 	}
 else
 	{
-	[_typeVehX] call A3A_fnc_addToPersonalGarageLocal;
-	hint "Vehicle added to Personal Garage";
+	//This is the wrong way. This adds to personal garage which is unavailable to sp
+	//[_typeVehX] call A3A_fnc_addToPersonalGarageLocal;
+	//hint "Vehicle added to Personal Garage";
+	//just copying what's above, it works
+	vehInGarage = vehInGarage + [_typeVehX];
+	publicVariable "vehInGarage";
+	hint format ["Vehicle added to %1 Garage",nameTeamPlayer];
 	};

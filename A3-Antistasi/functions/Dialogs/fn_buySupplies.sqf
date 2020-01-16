@@ -7,14 +7,6 @@ if ([player,300] call A3A_fnc_enemyNearCheck) exitWith {Hint "You cannot buy sup
 _positionX = position player;
 
 _boxX = objNull;
-if (_type in import_w_weapons) then
-{
-	_boxX = NATOAmmoBox createVehicle _positionX;
-	_nul = [_boxX] call A3A_fnc_NATOcrate;
-}
-else
-{
-	_boxX = CSATAmmoBox createVehicle _positionX;
-	_nul = [_boxX] call A3A_fnc_CSATcrate;
-};
+_boxX = NATOAmmoBox createVehicle _positionX;
+_nul = [_boxX] call A3A_fnc_NATOcrate;
 _boxX call jn_fnc_logistics_addAction;

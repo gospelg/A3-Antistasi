@@ -55,7 +55,7 @@ for "_i" from 0 to floor random _typeMax do {
 
 //Ammo Loot
 for "_i" from 0 to floor random 4 do {
-    _projectiles = (allMagMissile + allMagRocket)
+    _projectiles = (allMagMissile + allMagRocket);
     _available = (_projectiles - _unlocks - itemCargo _crate);
 	_loot = selectRandom _available;
 	if (isNil "_loot") then {

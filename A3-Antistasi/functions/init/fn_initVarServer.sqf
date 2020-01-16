@@ -684,8 +684,6 @@ server setVariable [import_wheel_apc,5000,true];
 server setVariable [import_track_apc,6500,true];
 server setVariable [import_heli,10000,true];
 server setVariable [import_tank,15000,true];
-server setVariable [import_e_weapons,1200,true];
-server setVariable [import_w_weapons,1500,true];
 
 ///////////////////////
 //     GARRISONS    ///

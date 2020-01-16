@@ -21,7 +21,7 @@ SDKGL = ["rhsgref_nat_grenadier","rhsgref_nat_pmil_grenadier"];
 SDKMil = ["rhsgref_nat_rifleman_mp44","rhsgref_nat_pmil_rifleman"];
 SDKSL = ["rhsgref_nat_commander","rhsgref_nat_pmil_commander"];
 SDKEng = ["rhsgref_cdf_ngd_engineer","rhsgref_cdf_reg_engineer"];
-SDKAAman = ["rhsgref_cdf_reg_specialist_aa","rhsgref_cdf_reg_specialist_aa"];
+SDKAAman = ["rhsgref_cdf_reg_specialist_aa", "rhsgref_cdf_para_specialist_aa"];
 
 ////////////////////////////////////
 //            GROUPS             ///

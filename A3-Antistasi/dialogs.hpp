@@ -3297,7 +3297,7 @@ class heavy_metal 		{
 	};
 };
 
-class diff_menu 			{
+class import_supplies 			{
 	idd=-1;
 	movingenable=false;
 

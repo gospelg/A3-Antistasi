@@ -104,6 +104,7 @@ initialRebelEquipment append ["6Rnd_45ACP_Cylinder","9Rnd_45ACP_Mag","30Rnd_45AC
 initialRebelEquipment append ["B_FieldPack_oli","B_FieldPack_blk","B_FieldPack_ocamo","B_FieldPack_oucamo","B_FieldPack_cbr","B_FieldPack_khk"];
 initialRebelEquipment append ["V_Chestrig_blk","V_Chestrig_rgr","V_Chestrig_khk","V_Chestrig_oli","V_BandollierB_blk","V_BandollierB_cbr","V_BandollierB_rgr","V_BandollierB_khk","V_BandollierB_oli","V_Rangemaster_belt"];
 initialRebelEquipment append ["Binocular","acc_flashlight"];
+initialRebelEquipment append ["ItemRadio","ItemGPS","I_UavTerminal"];
 //TFAR Unlocks
 if (hasTFAR) then {initialRebelEquipment append ["tf_microdagr","tf_rf7800str"]};
 if (startLR) then {initialRebelEquipment pushBack "tf_rt1523g_big_rhs"};

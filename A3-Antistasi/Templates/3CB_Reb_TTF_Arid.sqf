@@ -23,9 +23,9 @@ SDKMG = ["UK3CB_CCM_I_AR","UK3CB_CCM_I_AR"];
 SDKExp = ["UK3CB_CCM_I_DEM","UK3CB_CCM_I_DEM"];
 SDKGL = ["UK3CB_CCM_I_RIF_LITE","UK3CB_CCM_I_RIF_LITE"];
 SDKMil = ["UK3CB_CCM_I_RIF_BOLT","UK3CB_CCM_I_RIF_1"];
-SDKSL = ["UK3CB_CCM_I_TL","UK3CB_CCM_I_OFF"];
+SDKSL = ["UK3CB_CCM_I_OFF","UK3CB_CCM_I_OFF"];
 SDKEng = ["UK3CB_CCM_I_ENG","UK3CB_CCM_I_ENG"];
-SDKAAman = ["UK3CB_CCM_I_AT","UK3CB_CCM_I_AT"];
+SDKAAman = ["UK3CB_CCM_I_TL","UK3CB_CCM_I_TL"];
 
 ////////////////////////////////////
 //            GROUPS             ///
@@ -109,6 +109,8 @@ initialRebelEquipment append ["UK3CB_BAF_9_13rnd","UK3CB_BAF_9_15rnd","UK3CB_Enf
 initialRebelEquipment append ["UK3CB_CHC_C_B_MED","UK3CB_B_Bedroll_Backpack","UK3CB_TKC_C_B_Sidor_MED","UK3CB_CW_SOV_O_LATE_B_Sidor_RIF","UK3CB_CW_SOV_O_EARLY_B_Sidor_RIF"];
 initialRebelEquipment append ["UK3CB_V_CW_Chestrig","UK3CB_V_CW_Chestrig_2_Small","UK3CB_V_Belt_KHK","UK3CB_V_Belt_Rig_KHK","UK3CB_V_Belt_Rig_Lite_KHK","UK3CB_V_Pouch","UK3CB_V_Chestrig_TKA_OLI","UK3CB_V_Chestrig_2_small_OLI","UK3CB_V_Chestrig_TKA_BRUSH","UK3CB_V_Chestrig_Lite_KHK","UK3CB_V_Chestrig_Lite_2_Small_KHK"];
 initialRebelEquipment append ["rhs_acc_2dpZenit","Binocular"];
+initialRebelEquipment append ["IEDLandBig_Remote_Mag","IEDUrbanBig_Remote_Mag","IEDLandSmall_Remote_Mag","IEDUrbanSmall_Remote_Mag"];
+initialRebelEquipment append ["ItemRadio","ItemGPS","I_UavTerminal"];
 //TFAR Unlocks
 if (hasTFAR) then {initialRebelEquipment append ["tf_microdagr","tf_anprc154"]};
 if (startLR) then {initialRebelEquipment pushBack "UK3CB_B_O_Radio_Backpack"};

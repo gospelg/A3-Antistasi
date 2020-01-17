@@ -105,6 +105,8 @@ initialRebelEquipment append ["rhsusf_mag_7x45acp_MHP","rhs_mag_762x25_8","rhsgr
 initialRebelEquipment append ["B_FieldPack_oli","B_FieldPack_blk","B_FieldPack_ocamo","B_FieldPack_oucamo","B_FieldPack_cbr"];
 initialRebelEquipment append ["rhsgref_chestrig","rhsgref_chicom","rhs_vydra_3m","rhs_vest_pistol_holster","rhs_vest_commander","rhs_6sh46","rhsgref_alice_webbing"];
 initialRebelEquipment append ["rhs_acc_2dpZenit","Binocular"];
+initialRebelEquipment append ["IEDLandBig_Remote_Mag","IEDUrbanBig_Remote_Mag","IEDLandSmall_Remote_Mag","IEDUrbanSmall_Remote_Mag"];
+initialRebelEquipment append ["ItemRadio","ItemGPS","I_UavTerminal"];
 //TFAR Unlocks
 if (hasTFAR) then {initialRebelEquipment append ["tf_microdagr","tf_rf7800str"]};
 if (startLR) then {initialRebelEquipment pushBack "tf_rt1523g_big_rhs"};

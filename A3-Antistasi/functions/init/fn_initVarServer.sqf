@@ -49,7 +49,12 @@ DECLARE_SERVER_VAR(distanceForLandAttack, if (hasIFA) then {5000} else {3000});
 DECLARE_SERVER_VAR(maxUnits, 140);
 
 //Disabled DLC according to server parameters
-DECLARE_SERVER_VAR(disabledMods, call A3A_fnc_initDisabledMods);
+if (allowDLC == 1) then {
+    DECLARE_SERVER_VAR(disabledMods, []);
+}
+else {
+  DECLARE_SERVER_VAR(disabledMods, call A3A_fnc_initDisabledMods);
+};
 
 //Legacy tool for scaling AI difficulty. Could use a rewrite.
 DECLARE_SERVER_VAR(difficultyCoef, if !(isMultiplayer) then {0} else {floor ((({side group _x == teamPlayer} count (call A3A_fnc_playableUnits)) - ({side group _x != teamPlayer} count (call A3A_fnc_playableUnits))) / 5)});

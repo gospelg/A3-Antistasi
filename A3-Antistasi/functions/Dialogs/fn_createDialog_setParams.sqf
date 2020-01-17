@@ -39,4 +39,9 @@ if (!isNil "loadLastSave" && {!loadLastSave}) then {
 	waitUntil {dialog};
 	hint "Choose a Game Mode";
 	waitUntil {!dialog};
+
+//create the dlc menu
+_nul = createDialog "dlc_menu";
+hint "Choose whether or not to enable DLC items.";
+waitUntil {!dialog};
 };

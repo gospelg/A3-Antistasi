@@ -3410,7 +3410,7 @@ class dlc_menu {
 			y = 0.317959 * safezoneH + safezoneY;
 			w = 0.175015 * safezoneW;
 			h = 0.0560125 * safezoneH;
-			action = "closeDialog 0; nul = [] spawn A3A_fnc_enableDLC;";
+			action = "allowDLC = 1; closeDialog 0;";
 		};
 		class HQ_button_Gstatic: RscButton
 		{

@@ -48,9 +48,8 @@ DECLARE_SERVER_VAR(distanceForLandAttack, if (hasIFA) then {5000} else {3000});
 //Max units we aim to spawn in. It's not very strictly adhered to.
 DECLARE_SERVER_VAR(maxUnits, 140);
 
-//Disabled DLC according to server parameters
-if (allowDLC == 1) then {
-    DECLARE_SERVER_VAR(disabledMods, []);
+if !(isNil "allowDLC") then {
+  DECLARE_SERVER_VAR(disabledMods, []);
 }
 else {
   DECLARE_SERVER_VAR(disabledMods, call A3A_fnc_initDisabledMods);

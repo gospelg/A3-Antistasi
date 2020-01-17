@@ -44,15 +44,4 @@ if (!isNil "loadLastSave" && {!loadLastSave}) then {
 _nul = createDialog "dlc_menu";
 hint "Choose whether or not to enable DLC items.";
 waitUntil {!dialog};
-if (allowDLC == 1) then {
-    Kart = 1
-    Mark = 1
-    Heli = 1
-    Expansion = 1
-    Jets = 1
-    Orange = 1
-    Tanks = 1
-    Enoch = 1
-    OfficialMod = 1
-  };
 };

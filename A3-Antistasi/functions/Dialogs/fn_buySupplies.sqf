@@ -10,7 +10,7 @@ clearItemCargoGlobal _crate;
 clearBackpackCargoGlobal _crate;
 _crate call jn_fnc_logistics_addAction;
 
-private _crateItemTypeMax = 5z;
+private _crateItemTypeMax = 5;
 private _crateAttachmentTypeMax = 8;
 private _crateDeviceTypeMax = 2;
 

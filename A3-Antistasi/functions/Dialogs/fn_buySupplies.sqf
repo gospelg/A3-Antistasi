@@ -10,7 +10,7 @@ clearItemCargoGlobal _crate;
 clearBackpackCargoGlobal _crate;
 _crate call jn_fnc_logistics_addAction;
 
-private _crateItemTypeMax = 3;
+private _crateItemTypeMax = 5z;
 private _crateAttachmentTypeMax = 8;
 private _crateDeviceTypeMax = 2;
 
@@ -26,7 +26,7 @@ for "_i" from 0 to floor random _crateItemTypeMax do {
 	}
 	else {
 		[3, format ["Item chosen: %1", _loot],"fn_buySupplies"] call A3A_fnc_log;
-		_amount = floor random 5;
+		_amount = floor random [2,5,7];
 		_crate addItemCargoGlobal [_loot,_amount];
 		[3, format ["Spawning %2 of %3", _amount,_loot],"fn_buySupplies"] call A3A_fnc_log;
 	};
@@ -39,7 +39,7 @@ for "_i" from 0 to floor random _crateAttachmentTypeMax do {
 		if (debug) then {diag_log format ["%1: [Antistasi] | INFO | Supply Crate | No Attachment Left in Loot List",servertime]};
 	}
 	else {
-		_amount = floor random 5;
+		_amount = floor random [3,5,7];
 		_crate addItemCargoGlobal [_loot,_amount];
 		if (debug) then {diag_log format ["%1: [Antistasi] | INFO | Supply Crate | Spawning %2 of %3",servertime,_amount,_loot]};
 	};
@@ -53,7 +53,7 @@ for "_i" from 0 to floor random _crateDeviceTypeMax do {
 		if (debug) then {diag_log format ["%1: [Antistasi] | INFO | Supply Crate | No Device Bags Left in Loot List",servertime]};
 	}
 	else {
-		_amount = floor random 5;
+		_amount = floor random [1,3,5];
 		_crate addBackpackCargoGlobal [_loot,_amount];
 		if (debug) then {diag_log format ["%1: [Antistasi] | INFO | Supply Crate | Spawning %2 of %3",servertime,_amount,_loot]};
 	};

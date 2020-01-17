@@ -251,6 +251,7 @@ class A3A
 		class fastTravelRadio {};
 		class mineDialog {};
 		class moveHQObject {};
+		class portshopCheck {};
 		class skiptime {};
 		class squadOptions {};
 		class squadRecruit {};

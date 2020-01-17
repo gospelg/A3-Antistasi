@@ -3335,7 +3335,7 @@ class import_supplies			{
 		class 4slots_L1: RscButton
 		{
 			idc = -1;
-			text = "buy supply txt";
+			text = "Buy Gear";
 			tooltip = "An assortment of non-lethal, but useful gear. Scopes, NVGs, that sort of thing. $750";
 			x = 0.272481 * safezoneW + safezoneX;
 			y = 0.317959 * safezoneH + safezoneY;
